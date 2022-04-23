@@ -9,13 +9,29 @@
 
 */
 
-const difficulty = 100;
 
-document.getElementById("play").addEventListener("click", function(){
+document.getElementById("play").addEventListener("click", function() {
+    // Richiamo il selettore della scelta livello...
+    const difficultySelector = document.getElementById("level").value;
+    
+    let difficulty;
+    
+    // ...e assegno un valore diverso alla difficulty a seconda della selezione.
+    if (difficultySelector === "easy") {
+        difficulty = 100;
+    } else if (difficultySelector === "medium") {
+        difficulty = 81;
+    } else if (difficultySelector === "crazy") {
+        difficulty = 49;
+    }
+
+    // Seleziono il contenitore HTML
     const gameContainer = document.querySelector(".game-grid");
+    // Resetto il doppio click sul tasto play
     gameContainer.innerHTML = "";
-
-
+    
+    
+    // Creo un ciclo che richiama la funzione che genera i div un numero di volte corrispondente al livello scelto.
     for (let i = 1; i <= difficulty; i++) {
         // Richiamo la funzione che genera gli elementi div
         const gridElement = generateGridElement(i);
