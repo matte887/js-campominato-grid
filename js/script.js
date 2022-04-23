@@ -11,17 +11,23 @@
 
 const difficulty = 100;
 
+document.getElementById("play").addEventListener("click", function(){
+    for (let i = 1; i <= difficulty; i++) {
+        // Richiamo la funzione che genera gli elementi div
+        const gridElement = generateGridElement(i);
+        
+        // Appendo il div al contenitore HTML.
+        gameContainer.append(gridElement);
+        
+        // Aggiungo un'event listener
+        gridElement.addEventListener("click", function() {
+            this.classList.add("click");
+        });
+    };
+});
+
 const gameContainer = document.querySelector(".game-grid");
 
-for (let i = 1; i <= difficulty; i++) {
-    // Richiamo la funzione che genera gli elementi div
-    const gridElement = generateGridElement(i);
-
-    // Aggiungo un'event listener
-    gridElement.addEventListener("click", function() {
-        this.classList.add("click");
-    })
-}
 
 
 
@@ -42,12 +48,9 @@ function generateGridElement(digitToPush) {
     newElement.innerHTML = `<span>${digitToPush}</span>`;
 
     // Assegno la classe grid-element al div.
-    newElement.classList.add("grid-element");
-
-    // Appendo il div al contenitore HTML.
-    gameContainer.append(newElement);
+    newElement.classList.add("grid-element");    
 
     console.log(newElement);
 
     return newElement
-}
+};
