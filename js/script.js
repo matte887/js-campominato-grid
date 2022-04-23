@@ -21,8 +21,8 @@ document.querySelector(".game-grid").innerHTML = gameTable;
 // FUNCTION
 /**
  * Descrizione: la funzione crea un numero di div pari all'input.
- * @param {Number} numberOfCells è il numero di celle che voglio creare.
- * @returns {String} restituisce una stringa da pushare nell'HTML.
+ * @param {Number} numberOfCells -> è il numero di celle che voglio creare.
+ * @returns {String} -> restituisce una stringa da pushare nell'HTML.
  */
 function generateGridNumber(numberOfCells) {
     let gridElement = "";

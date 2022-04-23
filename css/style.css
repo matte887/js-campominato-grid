@@ -45,7 +45,7 @@ main {
 .grid-element {
     height: calc(100% / 10);
     width: calc(100% / 10);
-    border: 1px solid white;
+    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +58,7 @@ main {
 
 .grid-element.click {
     background-color: darkorange;
+    border: 1px solid white;
 }
 
 .grid-element.click span {
