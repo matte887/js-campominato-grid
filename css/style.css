@@ -43,14 +43,30 @@ main {
 }
 
 .grid-element {
-    height: calc(100% / 10);
-    width: calc(100% / 10);
+    /* height: calc(100% / 10);
+    width: calc(100% / 10); */
     border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
 }
+
+.grid-element.easy{
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+.grid-element.medium{
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+
+.grid-element.crazy{
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+
 
 .grid-element span {
     display: none;

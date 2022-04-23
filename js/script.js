@@ -38,6 +38,15 @@ document.getElementById("play").addEventListener("click", function() {
         
         // Appendo il div al contenitore HTML.
         gameContainer.append(gridElement);
+
+        // Aggiungo l'opportuna classe al gridElement
+        if (difficultySelector === "easy") {
+            gridElement.classList.add("easy");
+        } else if (difficultySelector === "medium") {
+            gridElement.classList.add("medium");
+        } else if (difficultySelector === "crazy") {
+            gridElement.classList.add("crazy");
+        }
         
         // Aggiungo un'event listener
         gridElement.addEventListener("click", function() {
