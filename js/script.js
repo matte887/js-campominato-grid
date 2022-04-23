@@ -5,29 +5,49 @@
     1. Creare la griglia
         1.1 Creare un numero di div pari al livello scelto.
         1.2 In ogni div inserire un numero progressivo.
-    2. Aggiungere un event listener ad ogni div per fare in modo che venga aggiunta una classe per fargli cambiare colore. 
+    2. Aggiungere un event listener ad ogni div per fare in modo che venga aggiunta una classe per fargli cambiare colore.
 
 */
 
 const difficulty = 100;
 
-const gameTable = generateGridNumber(difficulty);
+const gameContainer = document.querySelector(".game-grid");
 
-document.querySelector(".game-grid").innerHTML = gameTable;
+for (let i = 1; i <= difficulty; i++) {
+    // Richiamo la funzione che genera gli elementi div
+    const gridElement = generateGridElement(i);
+
+    // Aggiungo un'event listener
+    gridElement.addEventListener("click", function() {
+        this.classList.add("click");
+    })
+}
+
+
 
 
 
 
 // FUNCTION
 /**
- * Descrizione: la funzione crea un numero di div pari all'input.
- * @param {Number} numberOfCells -> è il numero di celle che voglio creare.
- * @returns {String} -> restituisce una stringa da pushare nell'HTML.
+ * Descrizione: la funzione crea un div con dentro il numero i.
+ * @param {Number} digitToPush-> è il numero di celle che voglio creare.
+ * @returns {any} -> restituisce un div.
  */
-function generateGridNumber(numberOfCells) {
-    let gridElement = "";
-    for (let i = 1; i <= numberOfCells; i++) {
-        gridElement += `<div class="grid-element click"><span>${[i]}</span></div>`;
-    }
-    return gridElement
+function generateGridElement(digitToPush) {
+    // Creo un nuovo elemento HTML.
+    const newElement = document.createElement("div");
+
+    // Aggiungo uno span all'elemento appena creato.
+    newElement.innerHTML = `<span>${digitToPush}</span>`;
+
+    // Assegno la classe grid-element al div.
+    newElement.classList.add("grid-element");
+
+    // Appendo il div al contenitore HTML.
+    gameContainer.append(newElement);
+
+    console.log(newElement);
+
+    return newElement
 }
