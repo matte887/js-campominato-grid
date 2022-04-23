@@ -12,6 +12,10 @@
 const difficulty = 100;
 
 document.getElementById("play").addEventListener("click", function(){
+    const gameContainer = document.querySelector(".game-grid");
+    gameContainer.innerHTML = "";
+
+
     for (let i = 1; i <= difficulty; i++) {
         // Richiamo la funzione che genera gli elementi div
         const gridElement = generateGridElement(i);
@@ -25,12 +29,6 @@ document.getElementById("play").addEventListener("click", function(){
         });
     };
 });
-
-const gameContainer = document.querySelector(".game-grid");
-
-
-
-
 
 
 
@@ -52,5 +50,5 @@ function generateGridElement(digitToPush) {
 
     console.log(newElement);
 
-    return newElement
+    return newElement;
 };
