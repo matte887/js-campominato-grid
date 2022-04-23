@@ -43,8 +43,8 @@ main {
 }
 
 .grid-element {
-    height: calc(100% / 8);
-    width: calc(100% / 8);
+    height: calc(100% / 10);
+    width: calc(100% / 10);
     border: 1px solid white;
     display: flex;
     justify-content: center;
