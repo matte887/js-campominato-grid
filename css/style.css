@@ -28,7 +28,7 @@ button {
 main {
     height: calc(100vh - 100px);
     width: 100%;
-    background-color: cadetblue;
+    background-color: #a9cadd;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,6 +40,10 @@ main {
     border: 1px solid white;
     display: flex;
     flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
 }
 
 .grid-element {
@@ -67,15 +71,10 @@ main {
     width: calc(100% / 7);
 }
 
-
-.grid-element span {
-    display: none;
+.grid-element.clicked {
+    background-color: #f86202;
 }
 
-.grid-element.click {
-    background-color: darkorange;
-}
-
-.grid-element.click span {
+.grid-element.clicked span {
     display: block;
 }

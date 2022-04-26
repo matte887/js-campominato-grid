@@ -29,6 +29,13 @@ document.getElementById("play").addEventListener("click", function() {
     const gameContainer = document.querySelector(".game-grid");
     // Resetto il doppio click sul tasto play
     gameContainer.innerHTML = "";
+
+    // Tolgo la classe .hidden dalla griglia
+    gameContainer.classList.remove("hidden");
+                                  
+    // Aggiungo la classe hidden all'istruzione
+    const instruction = document.querySelector("h2");
+    instruction.classList.add("hidden");
     
     
     // Creo un ciclo che richiama la funzione che genera i div un numero di volte corrispondente al livello scelto.
@@ -49,9 +56,7 @@ document.getElementById("play").addEventListener("click", function() {
         }
         
         // Aggiungo un'event listener
-        gridElement.addEventListener("click", function() {
-            this.classList.add("click");
-        });
+        gridElement.addEventListener("click", handleCellClick);
     };
 });
 
@@ -61,7 +66,7 @@ document.getElementById("play").addEventListener("click", function() {
 /**
  * Descrizione: la funzione crea un div con dentro il numero i.
  * @param {Number} digitToPush-> è il numero di celle che voglio creare.
- * @returns {any} -> restituisce un div.
+ * @returns {any} -> restituisce un div che rappresenta l'elemento della griglia.
  */
 function generateGridElement(digitToPush) {
     // Creo un nuovo elemento HTML.
@@ -77,3 +82,11 @@ function generateGridElement(digitToPush) {
 
     return newElement;
 };
+
+/**
+ * Descrizione: la funzione colora l'elemento
+ * La funziona non ritorna niente
+ */
+function handleCellClick() {
+    this.classList.add("clicked");
+}
